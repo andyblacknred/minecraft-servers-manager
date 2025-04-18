@@ -57,7 +57,7 @@ These entry points handle environment setup and ensure correct execution context
 
 ## ⚠ WARNING
 
-**It is NOT recommended to edit `config.ini` after a world has been created** (i.e., once the folder `build/<WORLD_NAME>/` exists).
+**It is NOT recommended to edit `config.ini`, `server.properties`, or other config files in the `src/config/` folder after a world has been created** (i.e., once the folder `build/<WORLD_NAME>/` exists).
 
 Changing world parameters such as:
 - `WORLD_NAME`
@@ -66,13 +66,15 @@ Changing world parameters such as:
 
 ...may lead to unexpected behavior, corruption, or runtime errors.
 
-> If you still choose to proceed — make sure you know what you're doing.
+> If you still choose to proceed — make sure you know what you're doing.  
+> In any case, **always run `backup.bat` before making any changes to the files in `src/config/`**.
 
 ---
 
 ## 📄 EULA NOTICE
 
 By using this project and running the server through the provided scripts, you indicate your agreement to the official [Minecraft EULA](https://aka.ms/MinecraftEULA).  
+The file `eula.txt` will be automatically generated with the line `eula=true`, representing your acceptance.
 
 If you do not agree to the EULA — **do not use this project**.
 
