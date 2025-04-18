@@ -28,14 +28,14 @@ It automates the process of preparing the environment, downloading the correct s
 
 1. **Download or clone** this repository.
 2. **Edit `config.ini`** to define:
-    - Minecraft version
-    - World name
-    - RAM allocation
-    - Port, etc.
+   - Minecraft version
+   - World name
+   - RAM allocation
+   - Port, etc.
 3. **Run `start.bat`**:
-    - Downloads correct `server.jar` version (if missing)
-    - Prepares build folder and configs
-    - Launches the server
+   - Downloads correct `server.jar` version (if missing)
+   - Prepares build folder and configs
+   - Launches the server
 4. **Run `backup.bat`** anytime to create a snapshot of your world.
 5. **Run `versions.bat`** to see a list of official Minecraft versions (including snapshots).
 
@@ -67,6 +67,14 @@ Changing world parameters such as:
 ...may lead to unexpected behavior, corruption, or runtime errors.
 
 > If you still choose to proceed — make sure you know what you're doing.
+
+---
+
+## 📄 EULA NOTICE
+
+By using this project and running the server through the provided scripts, you indicate your agreement to the official [Minecraft EULA](https://aka.ms/MinecraftEULA).  
+
+If you do not agree to the EULA — **do not use this project**.
 
 ---
 
