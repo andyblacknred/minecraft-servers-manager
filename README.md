@@ -1,6 +1,43 @@
-# 🛠 HELPERS DIRECTORY — DO NOT RUN DIRECTLY
+# 🎮 Minecraft Server Manager
 
-`src/scripts/helpers/` — this folder contains low-level helper scripts used by higher-level batch files (e.g., `start.bat`, `backup.bat`).
+A lightweight, script-based manager for running and maintaining your own Minecraft server.
+
+It automates the process of preparing the environment, downloading the correct server version, generating configuration files, and creating backups — all through clean and modular batch scripts.
+
+---
+
+## ✅ Features
+
+- Automatically downloads and caches `server.jar` for your selected version
+- Generates and updates key configuration files (`server.properties`, etc.)
+- Prepares the world folder structure on first launch
+- Creates timestamped backups with version tracking
+- Uses a central `config.ini` for easy customization
+
+---
+
+## 💻 Platform
+
+- ✅ **Tested on:** Windows 11
+- ❌ Not designed for WSL / Linux / macOS
+- 📁 All logic is implemented via `.bat` scripts and Windows paths
+
+---
+
+## 🚀 Getting Started
+
+1. **Download or clone** this repository.
+2. **Edit `config.ini`** to define:
+    - Minecraft version
+    - World name
+    - RAM allocation
+    - Port, etc.
+3. **Run `start.bat`**:
+    - Downloads correct `server.jar` version (if missing)
+    - Prepares build folder and configs
+    - Launches the server
+4. **Run `backup.bat`** anytime to create a snapshot of your world.
+5. **Run `versions.bat`** to see a list of official Minecraft versions (including snapshots).
 
 ---
 
@@ -34,4 +71,4 @@ Changing world parameters such as:
 ---
 
 **Author:** andyblacknred  
-**Version:** 1.0
+**Version:** 1.0.1
