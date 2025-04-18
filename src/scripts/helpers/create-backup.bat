@@ -1,14 +1,15 @@
 @echo off
 :: ===============================================================
 ::  • Copies world folder and key config files into timestamped
-::    backup\%WORLD_NAME%\snapshots\<YYYY-MM-DD_HH-MM>\ …
+::    backup\%WORLD_NAME%\%VERSION%\snapshots\<YYYY-MM-DD_HH-MM>\ …
 :: ===============================================================
 
 echo [START] Creating backup …
 
 :: STEP 1 – compose paths and timestamp
 set "SOURCE=%BASE_DIR%\build\%WORLD_NAME%"
-set "DEST=%BASE_DIR%\backup\%WORLD_NAME%\snapshots"
+set "VERSION_PATH=%BASE_DIR%\backup\%WORLD_NAME%\%VERSION%"
+set "DEST=%VERSION_PATH%\snapshots"
 set DATETIME=%DATE:~6,4%-%DATE:~3,2%-%DATE:~0,2%_%TIME:~0,2%-%TIME:~3,2%
 set DATETIME=%DATETIME: =0%
 set "TARGET=%DEST%\%DATETIME%"
