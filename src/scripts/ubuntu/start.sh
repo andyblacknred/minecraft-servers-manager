@@ -8,10 +8,10 @@ source "$(dirname "$0")/helpers/show-env.sh"
 
 # STEP 2: Prepare build folder and server files
 source "$BASE_DIR/src/scripts/ubuntu/helpers/ensure-build-folder.sh"
-source "$BASE_DIR/src/scripts/ubuntu/helpers/download-server-jar.sh"
-source "$BASE_DIR/src/scripts/ubuntu/helpers/copy-server-jar-to-build.sh"
+source "$BASE_DIR/src/scripts/ubuntu/helpers/download-server.jar.sh"
+source "$BASE_DIR/src/scripts/ubuntu/helpers/copy-server.jar-to-build.sh"
 source "$BASE_DIR/src/scripts/ubuntu/helpers/generate-eula.sh"
-source "$BASE_DIR/src/scripts/ubuntu/helpers/generate-server-properties.sh"
+source "$BASE_DIR/src/scripts/ubuntu/helpers/generate-server.properties.sh"
 
 # STEP 3: (optional) Backup before launch
 source "$BASE_DIR/src/scripts/ubuntu/helpers/create-backup.sh"
