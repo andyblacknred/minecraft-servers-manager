@@ -8,7 +8,7 @@
 cd /d "%~dp0"
 
 :: STEP 2 – climb three levels up (to project root) and set BASE_DIR
-cd ..\..\..
+cd ..\..\..\..
 set "BASE_DIR=%CD%"
 
 :: STEP 3 – fixed config path (src\config\config.ini)
