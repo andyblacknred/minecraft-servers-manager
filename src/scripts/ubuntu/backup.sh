@@ -6,8 +6,8 @@ echo "[START] Manual backup trigger..."
 source "$(dirname "$0")/helpers/load-env.sh"
 source "$(dirname "$0")/helpers/show-env.sh"
 
-# STEP 2 – run backup
-"$BASE_DIR/src/scripts/ubuntu/helpers/create-backup.sh"
+# STEP 2 – run backup (через source, бо тепер усі helpers — source-файли)
+source "$BASE_DIR/src/scripts/ubuntu/helpers/create-backup.sh"
 
 echo "[DONE] Backup created."
 read -p "Press enter to continue..."

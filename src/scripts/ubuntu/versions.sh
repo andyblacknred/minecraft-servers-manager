@@ -6,8 +6,8 @@ echo "[START] Show versions..."
 source "$(dirname "$0")/helpers/load-env.sh"
 source "$(dirname "$0")/helpers/show-env.sh"
 
-# STEP 2: Call the versions list helper
-"$BASE_DIR/src/scripts/ubuntu/helpers/show-versions-list.sh"
+# STEP 2: Source the versions list helper
+source "$BASE_DIR/src/scripts/ubuntu/helpers/show-versions-list.sh"
 
 echo "[DONE] End of the versions list."
 read -p "Press enter to continue..."
