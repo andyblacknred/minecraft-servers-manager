@@ -16,11 +16,15 @@ It automates the process of preparing the environment, downloading the correct s
 
 ---
 
-## 💻 Platform
+## 💻 Platform Support
 
-- ✅ **Tested on:** Windows 11
-- ❌ Not designed for WSL / Linux / macOS
-- 📁 All logic is implemented via `.bat` scripts and Windows paths
+| Platform     | Status   | Scripts Folder         |
+|--------------|----------|------------------------|
+| ✅ Windows 11 | Tested   | `src/scripts/win11/`   |
+| ✅ Ubuntu     | Tested   | `src/scripts/ubuntu/`  |
+| ⚠ WSL/macOS  | Untested | Might require tweaks   |
+
+> ⚠️ All logic is separated per OS and stored in platform-specific folders.
 
 ---
 
@@ -32,24 +36,24 @@ It automates the process of preparing the environment, downloading the correct s
    - World name
    - RAM allocation
    - Port, etc.
-3. **Run `start.bat`**:
+3. **3. Run `start.bat` (from src/scripts/win11/) or `start.sh` (from src/scripts/ubuntu/)**:
    - Downloads correct `server.jar` version (if missing)
    - Prepares build folder and configs
    - Launches the server
-4. **Run `backup.bat`** anytime to create a snapshot of your world.
-5. **Run `versions.bat`** to see a list of official Minecraft versions (including snapshots).
+4. **Run `backup.bat|sh`** anytime to create a snapshot of your world.
+5. **Run `versions.bat|sh`** to see a list of official Minecraft versions (including snapshots).
 
 ---
 
 ## ⚠ IMPORTANT
 
-**Do NOT run these helper scripts directly.**  
-They require `BASE_DIR` and other environment variables to be loaded first via `load-env.bat`.
+**Do NOT run 'helper/' scripts directly.**  
+They require BASE_DIR and other environment variables to be loaded first — which is done automatically by `start.bat` or `start.sh`.
 
 ### ✅ Instead, always use the main entry point scripts:
 
-- `start.bat`
-- `backup.bat`
+- `start.bat` (or `start.sh` for 'ubuntu' version)
+- `backup.bat|sh`
 
 These entry points handle environment setup and ensure correct execution context.
 
@@ -67,7 +71,7 @@ Changing world parameters such as:
 ...may lead to unexpected behavior, corruption, or runtime errors.
 
 > If you still choose to proceed — make sure you know what you're doing.  
-> In any case, **always run `backup.bat` before making any changes to the files in `src/config/`**.
+> In any case, **always run `backup.bat` (Windows) or `backup.sh` (Ubuntu) before making any changes to the files in `src/config/`**.
 
 ---
 
