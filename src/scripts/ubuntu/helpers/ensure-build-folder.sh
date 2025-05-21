@@ -12,5 +12,3 @@ fi
 
 # STEP 2 – optional pause when DEBUG=true
 [[ "$DEBUG" == "true" ]] && read -p "Press enter to continue..."
-
-exit 0

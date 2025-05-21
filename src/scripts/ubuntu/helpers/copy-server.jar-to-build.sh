@@ -21,7 +21,7 @@ fi
 if [[ ! -f "$JAR_CACHE" ]]; then
   echo "[ERROR] Cached server.jar not found: $JAR_CACHE"
   [[ "$DEBUG" == "true" ]] && read -p "Press enter to continue..."
-  exit 1
+  return 1 2>/dev/null || exit 1
 fi
 
 # STEP 4 – ensure build folder exists
@@ -38,7 +38,7 @@ cp "$JAR_CACHE" "$JAR_BUILD"
 if [[ $? -ne 0 ]]; then
   echo "[ERROR] Failed to copy server.jar to build folder."
   [[ "$DEBUG" == "true" ]] && read -p "Press enter to continue..."
-  exit 1
+  return 1 2>/dev/null || exit 1
 fi
 
 # STEP 6 – confirm success
@@ -46,5 +46,3 @@ echo "[DONE] server.jar is ready at: $JAR_BUILD"
 
 # STEP 7 – optional debug pause
 [[ "$DEBUG" == "true" ]] && read -p "Press enter to continue..."
-
-exit 0

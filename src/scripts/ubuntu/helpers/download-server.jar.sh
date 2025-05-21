@@ -9,7 +9,7 @@ JAR_CACHE="$BASE_DIR/cache/versions/$VERSION.jar"
 if [[ -f "$JAR_CACHE" ]]; then
   echo "[CACHE] Found server.jar - $JAR_CACHE"
   [[ "$DEBUG" == "true" ]] && read -p "Press enter to continue..."
-  exit 0
+  return 0 2>/dev/null || true
 fi
 
 # STEP 3 – create cache folder if needed
@@ -24,14 +24,14 @@ URL=$(curl -s https://piston-meta.mojang.com/mc/game/version_manifest.json |
 if [[ -z "$URL" ]]; then
   echo "[ERROR] Version $VERSION not found in manifest"
   [[ "$DEBUG" == "true" ]] && read -p "Press enter to continue..."
-  exit 1
+  return 1 2>/dev/null || exit 1
 fi
 
 DL_URL=$(curl -s "$URL" | jq -r '.downloads.server.url')
 if [[ -z "$DL_URL" ]]; then
   echo "[ERROR] Failed to retrieve download URL from metadata"
   [[ "$DEBUG" == "true" ]] && read -p "Press enter to continue..."
-  exit 1
+  return 1 2>/dev/null || exit 1
 fi
 
 echo "[INFO] Download URL - $DL_URL"
@@ -41,7 +41,7 @@ curl -L -o "$JAR_CACHE" "$DL_URL"
 if [[ ! -f "$JAR_CACHE" ]]; then
   echo "[ERROR] Download failed for $VERSION"
   [[ "$DEBUG" == "true" ]] && read -p "Press enter to continue..."
-  exit 1
+  return 1 2>/dev/null || exit 1
 fi
 
 # STEP 6 – print size and check magic bytes
@@ -53,5 +53,3 @@ echo
 
 # STEP 7 – optional debug pause
 [[ "$DEBUG" == "true" ]] && read -p "Press enter to continue..."
-
-exit 0

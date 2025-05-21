@@ -24,5 +24,3 @@ echo
 
 # STEP 4 – optional debug pause
 [[ "$DEBUG" == "true" ]] && read -p "Press enter to continue..."
-
-exit 0

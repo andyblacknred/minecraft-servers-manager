@@ -14,7 +14,7 @@ echo "[START] Loading variables from $CFG"
 if [[ ! -f "$CFG" ]]; then
   echo "[ERROR] config.ini not found at $CFG"
   [[ "$DEBUG" == "true" ]] && read -p "Press enter to continue..."
-  exit 1
+  return 1 2>/dev/null || exit 1
 fi
 
 # STEP 4 – export KEY=VALUE lines
@@ -27,5 +27,3 @@ done < "$CFG"
 # STEP 5 – finish
 echo "[DONE] Environment variables loaded."
 [[ "$DEBUG" == "true" ]] && read -p "Press enter to continue..."
-
-exit 0

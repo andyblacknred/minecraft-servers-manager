@@ -23,5 +23,3 @@ fi
 echo "[END] Environment variables printed."
 
 [[ "$DEBUG" == "true" ]] && read -p "Press enter to continue..."
-
-exit 0

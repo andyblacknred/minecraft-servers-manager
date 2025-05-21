@@ -10,7 +10,7 @@ OUTPUT="$BASE_DIR/build/$WORLD_NAME/server.properties"
 if [[ ! -f "$TEMPLATE" ]]; then
   echo "[ERROR] Template not found - $TEMPLATE"
   [[ "$DEBUG" == "true" ]] && read -p "Press enter to continue..."
-  exit 1
+  return 1 2>/dev/null || exit 1
 fi
 
 # STEP 3 – ensure output folder exists
@@ -27,5 +27,3 @@ echo "[DONE] server.properties created - $OUTPUT"
 
 # STEP 6 – optional debug pause
 [[ "$DEBUG" == "true" ]] && read -p "Press enter to continue..."
-
-exit 0

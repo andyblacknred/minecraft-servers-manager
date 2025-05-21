@@ -11,5 +11,3 @@ echo "[DONE] Version list fetched."
 
 # STEP 3 – optional debug pause
 [[ "$DEBUG" == "true" ]] && read -p "Press enter to continue..."
-
-exit 0

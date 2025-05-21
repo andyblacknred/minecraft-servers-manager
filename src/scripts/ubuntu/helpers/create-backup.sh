@@ -25,5 +25,3 @@ echo "[DONE] Backup saved in - $TARGET"
 
 # STEP 5 – optional debug pause
 [[ "$DEBUG" == "true" ]] && read -p "Press enter to continue..."
-
-exit 0
